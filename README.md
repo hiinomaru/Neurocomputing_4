@@ -2,32 +2,22 @@
 
 ## Description
 
-This project implements a simple AI agent that can automatically select and use external tools to answer user questions.
+This project implements a simple tool-using AI agent in Python. The agent analyzes a user question, selects an appropriate tool, executes it, and generates a final answer based on the obtained result.
 
-The agent supports:
+Implemented tools:
 
 * Web search using DuckDuckGo Search
 * Currency conversion using the Frankfurter API
-* Arithmetic and symbolic calculations
+* Arithmetic and symbolic calculations using SymPy
 
-The system records an execution trace containing the selected tool, tool output, execution status, and final answer.
-
-## Requirements
-
-* Python 3.10+
-* pandas
-* requests
-* duckduckgo-search
-* sympy
-* transformers
-* torch
+The system also records an execution trace containing the selected tool, tool output, execution status, and final answer.
 
 ## Installation
 
-Install the required packages:
+Install the required dependencies:
 
 ```bash
-pip install pandas requests duckduckgo-search sympy transformers torch
+pip install -r requirements.txt
 ```
 
 ## Running the Project
@@ -47,17 +37,11 @@ print(result["answer"])
 display(result["trace"])
 ```
 
-## Example Tools
-
-* `search_web()` – retrieves information from the web.
-* `convert_currency()` – converts currencies using live exchange rates.
-* `calculate()` – performs arithmetic and symbolic calculations.
-
 ## Output
 
-For each query the system produces:
+For each query, the agent produces:
 
-1. Selected tool
-2. Tool result
-3. Execution trace
-4. Final answer
+* Selected tool
+* Tool output
+* Execution trace
+* Final answer
